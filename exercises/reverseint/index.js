@@ -9,16 +9,23 @@
 //   reverseInt(-90) === -9
 
 // Solution 1
+// function reverseInt(n) {
+//   let addition
+//   if (n < 0) {
+//     addition = '-';
+//     n = -n;
+//   } else {
+//     addition = '';
+//   }
+//   var result = n.toString().split('').reduce((rev, char) => char + rev, '');
+//   return parseInt(addition + result);
+// }
+
+
+// Solution 2
 function reverseInt(n) {
-  let addition
-  if (n < 0) {
-    addition = '-';
-    n = -n;
-  } else {
-    addition = '';
-  }
   var result = n.toString().split('').reduce((rev, char) => char + rev, '');
-  return parseInt(addition + result);
+  return parseInt(result) * Math.sign(n);
 }
 
 module.exports = reverseInt;
