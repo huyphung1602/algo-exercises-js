@@ -9,14 +9,13 @@
 
 // Solution 1
 function capitalize(str) {
-  const words = str.split(' ');
-  let capitalizeWords = [];
+  const words = [];
 
-  for (let word of words) {
-    capitalizeWords.push(upperCaseWord(word));
+  for (let word of str.split(' ')) {
+    words.push(upperCaseWord(word));
   }
 
-  return capitalizeWords.join(' ');
+  return words.join(' ');
 }
 
 function upperCaseWord(word) {
