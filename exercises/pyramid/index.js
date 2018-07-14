@@ -14,6 +14,16 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+// Solution 1
+function pyramid(n) {
+  const array = Array(n+n-1).fill(' ');
+  const mid = n-1;
+
+  for (let i = 0; i <= mid; i++) {
+    array[mid-i] = '#';
+    array[mid+i] = '#';
+    console.log(array.join(''));
+  }
+}
 
 module.exports = pyramid;
