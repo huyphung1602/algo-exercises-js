@@ -18,12 +18,28 @@
 //       '####'
 
 // Solution 1
-function steps(n) {
-  const array = Array(n).fill(' ');
+// function steps(n) {
+//   const array = Array(n).fill(' ');
 
-  for (let index in array) {
-    array[index] = '#';
-    console.log(array.join(''));
+//   for (let index in array) {
+//     array[index] = '#';
+//     console.log(array.join(''));
+//   }
+// }
+
+// Solution 2
+function steps(n) {
+  for (let row = 0; row < n; row++) {
+    let stair = '';
+    for (let column = 0; column < n; column++) {
+      if (column <= row) {
+        stair += '#';
+      } else {
+        stair += ' ';
+      }
+    }
+
+    console.log(stair);
   }
 }
 
