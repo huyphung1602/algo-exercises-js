@@ -11,11 +11,7 @@
 function vowels(str) {
   const regExp = /[aeoui]/gi;
   const vowelsStr = str.match(regExp);
-  if (!vowelsStr) {
-    return 0;
-  } else {
-    return vowelsStr.length;
-  }
+  return vowelsStr ? vowelsStr.length : 0;
 }
 
 // // Solution 2
