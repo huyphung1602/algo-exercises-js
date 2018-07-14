@@ -18,29 +18,48 @@
 //       '####'
 
 // Solution 1
-// function steps(n) {
-//   const array = Array(n).fill(' ');
+function steps(n) {
+  const array = Array(n).fill(' ');
 
-//   for (let index in array) {
-//     array[index] = '#';
-//     console.log(array.join(''));
+  for (let index in array) {
+    array[index] = '#';
+    console.log(array.join(''));
+  }
+}
+
+// Solution 2
+// function steps(n) {
+//   for (let row = 0; row < n; row++) {
+//     let stair = '';
+//     for (let column = 0; column < n; column++) {
+//       if (column <= row) {
+//         stair += '#';
+//       } else {
+//         stair += ' ';
+//       }
+//     }
+
+//     console.log(stair);
 //   }
 // }
 
-// Solution 2
-function steps(n) {
-  for (let row = 0; row < n; row++) {
-    let stair = '';
-    for (let column = 0; column < n; column++) {
-      if (column <= row) {
-        stair += '#';
-      } else {
-        stair += ' ';
-      }
-    }
+// Solution 3
+// function steps(n, row = 0, stair = '') {
+//   if (n === row) {
+//     return;
+//   }
 
-    console.log(stair);
-  }
-}
+//   if (n === stair.length) {
+//     console.log(stair);
+//     return steps(n, row + 1);
+//   }
+
+//   if (stair.length <= row) {
+//     stair += '#';
+//   } else {
+//     stair += ' ';
+//   }
+//   return steps(n, row, stair);
+// }
 
 module.exports = steps;
